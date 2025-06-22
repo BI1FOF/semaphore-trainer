@@ -1,0 +1,91 @@
+﻿// index.html
+
+<!doctype html>
+<html lang="zh-CN"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>无存储不联网手旗练习器</title> 
+  <link rel="stylesheet" href="style.css">
+ </head> 
+ <body> 
+  <div class="notification" id="notification"></div> 
+  <div class="container"> 
+   <div class="control-panel"> <!-- 报文输入区域 --> <textarea id="inputText" placeholder="请输入报文..." maxlength="1000"></textarea> 
+    <div class="button-row"> <button class="special-btn" id="callButton">[呼叫]</button> <button class="special-btn" id="endButton">[完结]</button> <button class="special-btn" id="randomButton">乱码</button> 
+    </div> 
+    <div class="button-row"> <button id="playButton" class="control-btn">播放</button> <button id="resetButton" class="control-btn">清空</button> 
+    </div> 
+    <div class="button-row"> <button id="settingsButton">设置</button> 
+    </div> <!-- 信息显示区域 --> 
+    <div class="info-display"> 
+     <div class="info-item"> 
+      <div class="info-label">
+       码速：
+      </div> 
+      <div id="speedValue" class="info-value">
+       60
+      </div> 
+     </div> 
+     <div class="info-item"> 
+      <div class="info-label">
+       状态：
+      </div> 
+      <div id="statusValue" class="info-value">
+       就绪
+      </div> 
+     </div> 
+    </div> 
+    <div class="character-container"> 
+     <div class="character" id="character"> <!-- 当前信号指示器 --> 
+      <div class="head"></div> <!-- 身体 --> 
+      <div class="body"></div> <!-- 腿部 --> 
+      <div class="leg left"></div> 
+      <div class="leg right"></div> <!-- 左手臂 + 旗 --> 
+      <div class="arm left" style="--arm-rotation: var(--left-arm-rotation)"> 
+       <div class="flag"></div> 
+      </div> <!-- 右手臂 + 旗 --> 
+      <div class="arm right" style="--arm-rotation: var(--right-arm-rotation)"> 
+       <div class="flag"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!-- 随机报文生成对话框 --> 
+  <div id="randomDialog" class="dialog-overlay" style="display:none;"> 
+   <div class="dialog-content"> 
+    <div class="dialog-title">
+     生成乱码报
+    </div> 
+    <div class="dialog-row"> 
+     <div class="dialog-label">
+      乱码组数：
+     </div> 
+     <div class="number-control"> <button class="number-btn" id="decreaseBtn">-</button> 
+      <input type="number" id="groupCount" class="number-input" value="5" min="1" max="20"> <button class="number-btn" id="increaseBtn">+</button> 
+     </div> 
+    </div> 
+    <div class="dialog-buttons"> <button id="letterBtn" class="dialog-btn letter-btn">字码</button> <button id="cancelBtn" class="dialog-btn cancel-btn">取消</button> 
+    </div> 
+   </div> 
+  </div> <!-- 设置对话框 --> 
+  <div id="settingsDialog" class="dialog-overlay" style="display:none;"> 
+   <div class="dialog-content"> 
+    <div class="dialog-title">
+     设置
+    </div> 
+    <div class="dialog-row"> 
+     <div class="dialog-label">
+      码速：
+     </div> 
+     <div class="number-control"> <button class="number-btn" id="speedDecreaseBtn">-</button> 
+      <input type="number" id="speedInput" class="number-input" value="60" min="15" max="100"> <button class="number-btn" id="speedIncreaseBtn">+</button> 
+     </div> 
+    </div> 
+    <div class="dialog-buttons"> <button id="settingsConfirmBtn" class="dialog-btn letter-btn">确定</button> <button id="settingsCancelBtn" class="dialog-btn cancel-btn">取消</button> 
+    </div> 
+   </div> 
+  </div> 
+  <script src="main.js"></script>
+ </body>
+</html>
