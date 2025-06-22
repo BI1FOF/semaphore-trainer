@@ -1,33 +1,33 @@
-﻿// style.css
-
-        /* 全局样式 */
+        /* ===== 全局样式重置 ===== */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
         
+        /* ===== 页面主体样式 ===== */
         body {
-            font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #1a1a2e, #16213e);
-            min-height: 100vh;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
             color: #e6e6e6;
             line-height: 1.5;
         }
         
+        /* ===== 容器布局 ===== */
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-                
-        /* 控制面板 */
+        
+        /* ===== 控制面板样式 ===== */
         .control-panel {
             width: 100%;
             margin-bottom: 20px;
@@ -38,7 +38,7 @@
             border: 1px solid rgba(80, 80, 120, 0.3);
         }
         
-        /* 文本输入区域 */
+        /* ===== 文本输入区域 ===== */
         #inputText {
             width: 100%; 
             height: 100px;
@@ -58,7 +58,7 @@
         #inputText::placeholder {
             color: #a0a0c0;
         }
-        
+                
         /* 按钮行布局 */
         .button-row {
             display: flex;
@@ -189,7 +189,7 @@
         
         /* 手旗动画区域 */
         .animation-area {
-            width: 100%;
+            width: 80%;
             background: rgba(30, 30, 46, 0.8);
             border-radius: 10px;
             padding: 25px;
@@ -205,7 +205,7 @@
         .character-container {
             position: relative;
             width: 300px;
-            height: 200px;
+            height: 230px;
             margin-bottom: 40px;
         }
         
@@ -450,5 +450,3 @@
         .cancel-btn:hover {
             background-color: #666;
         }
-        
-
