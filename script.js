@@ -61,7 +61,7 @@ const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUV@WXYZ'; // 字符集
 
 // 码速常量
 const DEFAULT_CODE_SPEED = 60;         // 默认码速
-const MIN_CODE_SPEED = 15;             // 最小码速
+const MIN_CODE_SPEED = 30;             // 最小码速
 const MAX_CODE_SPEED = 100;            // 最大码速
 
 // 动画时间因子
